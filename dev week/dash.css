@@ -1,0 +1,284 @@
+body{
+    margin: 0px;
+    background: pink;
+    background: linear-gradient(to bottom, #003300 20%, #cc0000 100%);
+  
+  
+}
+
+.navigation {
+    background: linear-gradient(to bottom, rgba(22, 21, 21, 0.74) 20%, #cc0000 100%);
+    position: fixed;
+    bottom: 0vh;
+    width: 100vw;
+    height: 16vh;
+    display: flex;
+    justify-content: space-around;
+    
+    
+}
+
+#new {
+    background-color: #1C2833;
+    position: fixed;
+    bottom: 16vh;
+    width: 70%;
+    left: 30%;
+    height: 8vh;
+    
+    z-index: 2;
+    box-shadow: 0.1px 8px 8px 2px rgba(17, 16, 16, 0.726);
+    
+}
+
+.navigation a {
+
+      
+    font-size: 6vh;
+    color: white;
+    width:20%;
+    text-align: center;
+    margin-top: 5vh;
+    
+    
+  
+
+} 
+
+.navigation a:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#00ff99 ), to(#0000ff));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    
+
+}
+
+
+
+
+aside{
+   
+    background: linear-gradient(to bottom, rgba(22, 21, 21, 0.74)  20%, #cc0000 100%);
+    height: 84vh;
+    width: 30%;
+    color: white;
+    position: relative;
+    margin-top: 0px;
+    float: left;
+    
+    
+
+   
+
+    
+}
+
+.bottom-icons {
+   
+    
+    position: absolute;
+    top: 72vh;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+    font-size: 4vh;
+    
+}
+
+.topicon {
+
+    position: absolute;
+  
+    top: 22vh;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1vh;
+  }
+
+
+
+
+
+#map {
+    height: 84vh;
+    width: 70%;
+    float: left;
+    margin-right: 0px;
+   
+   z-index: 1;
+    }
+
+    #music {
+        background: linear-gradient(to bottom, rgba(22, 21, 21, 0.74)  20%, #cc0000 100%);
+         height: 76vh;
+         width: 30vw;
+         border-radius: 10px ;
+         position: fixed;
+         right: 0%;
+    
+    }
+    
+
+
+img {
+  
+    position: absolute;
+    
+   
+    top:30vh;
+    height:30vh ;
+    margin-top: 5vh;
+    width: 15vw;
+ 
+    left: 28%;
+    
+}
+
+.circle {
+    border-radius: 50%;
+    width: 3vh;
+    height: 3vh;
+    padding: 10px;
+    border: 3px solid rgb(236, 236, 236);
+    color: rgb(240, 233, 233);
+    text-align: center;
+    font: 2vh Arial, sans-serif;
+  }
+
+
+
+ .globe{
+    background: -webkit-gradient(linear, left top, left bottom, from(#00ff99 ), to(#0000ff));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+     
+ } 
+
+
+
+
+ .CON {
+    
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+     left:45vw;
+     top: 2.5vh;
+      color: white;
+      width: 20vw;
+      height: fit-content;
+ }
+
+ .CON span {
+     font-size: 4vh;
+ }
+      
+     
+ 
+    
+ }
+
+
+
+.volume a {
+    font-size: 40px;
+ 
+  
+  
+   
+}
+
+#musicImage {
+    position: absolute;
+    height: 20vh;
+    width: 20vh;
+    position: relative;
+    border-radius: 50%;
+    top: 0vh;
+    left: 11vw;
+    margin-top: 5%;
+    
+    
+}
+
+#head {
+    position: absolute;
+    top: 0%;
+    height: fit-content;
+    width: 100%;
+   
+   
+}
+
+#song_name {
+    
+   
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 0.5vh;
+    font-size: 3vh;
+    margin-left: 5%;
+    color: white;
+}
+
+
+.music-tracks .p_song{
+    position: relative;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 12px 12px 20px 12px;
+    box-shadow: 0.1px 8px 8px 2px rgba(17, 16, 16, 0.726);
+    left: 3%;
+   
+}
+
+.music-tracks .p_song #p_title{
+	font-size: 2vh;
+}
+.music-tracks .p_song #p_artist{
+	position: absolute;
+	bottom: 6px;
+	left: 15px;
+	font-size: 1.5vh;
+}
+.music-tracks .p_song button{
+	height: 35px;
+	width: 35px;
+	border-radius: 50%;
+	font-size: 18px;
+	border: none;
+	cursor: pointer;
+	transition: 0.5s;
+	margin: 0 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #d81111c9;
+	box-shadow: 0.1px 8px 8px 2px rgba(0,0,0,0.2);
+}
+
+.music-tracks .p_song:hover{
+    background: #1C2833;
+ }
+
+ .fa-play{
+    display: block;
+}
+.fa-pause{
+    display: none;
+}
+
+
+ .playpause.active .fa-play{
+    display: none;
+}
+.playpause.active .fa-pause{
+    display: block;
+}

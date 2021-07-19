@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Telsa car dashboard" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+    type="text/css"
+  />
+
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Add stylesheets here (for any purpose, eg: fonts, icons, external stylesheets) -->
+
+    <!-- Fontawesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google material icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="dash.css">
+
+    <title>Tesla car dashboard</title>
+  </head>
+
+  <body>
+      <!-- Side car section -->
+        <aside>
+          <header>
+            
+            <!-- Car speed -->
+            <div style="text-align: center;" id="head"> 
+              <span style="font-size: 70px; font-family: Arial, Helvetica, sans-serif; font-size: 10vh;"> 20 </span>
+              <br>
+              <small style=" font-size: 3vh;">MPH</small>
+            </div>
+    
+            <!-- Battery percentage -->
+            <div  style=" position: absolute; top: 16vh; width: 100%; height: 5vh;">
+              <div style=" float: left; font-size: 3vh; padding-top: 0.5vh; height: 4vh; width: 100%; display: flex; justify-content: space-between; " >
+                <small style=" float: left;">P &nbsp;&nbsp;R&nbsp;&nbsp;N&nbsp;&nbsp;D</small>
+                  
+                 
+                  <small style=" float: right;display: flex; align-items: center;">400km<i style="color: rgb(12, 240, 12); display: flex; align-items: center;" class="material-icons" > battery_full</i>
+                </small>
+                  
+              
+                
+              </div>
+             
+              
+            </div>
+          </header>
+         <hr style="background-color: darkred;position: absolute; top: 19vh; width: 100%;">
+          <!-- Divider -->
+
+          <div class="topicon">
+            <!-- Steering wheel icon here -->
+            <i style="font-size: 4vh; padding-top: 5px; color: cyan;" class="fas fa-car"></i>
+            <span class="circle">30</span>
+            <i style="font-size: 4vh; padding-top: 5px; color: rgb(183, 41, 202);"class="fas fa-tachometer-alt"></i>
+          </div>
+
+          <!-- Car's image (you may use any other car image also) -->
+          <div>
+            <img src="tesla_car.png" alt="tesla_car" />
+          </div>
+
+          <!-- Some random icons -->
+          <div class="bottom-icons">
+            <i class="fas fa-globe globe"></i>
+            <span  style="font-size: 30px; color: yellow;" class="material-icons"> bolt </span>
+            <i class="fas fa-microphone" style="color: rgb(137, 137, 150);"></i>
+          </div>
+        </aside>
+         <!-- Add map in the given section -->
+        <div id="map">
+        </div>
+
+        <div id="new" >
+          <!-- Controls -->
+
+          <h1 id="song_name"><h1>
+           
+
+
+          <div class="control CON"  >
+           
+            <span class="material-icons"id="prev" onclick="previousmusic()"> skip_previous </span>
+
+         
+            <span id="playpausebtn" class="playpause button button-lg" >
+              <i class="fas fa-play fa-lg" style="font-size: 2.5vh; margin-top: 1vh;" ></i>
+              <i class="fas fa-pause fa-lg" style="font-size: 2.5vh; margin-top: 1vh;"></i>
+          </span>
+          
+            <span class="material-icons" id="next" onclick="nextmusic()"> skip_next </span>
+
+           
+        
+        </div>
+        </div>
+        
+
+
+    
+
+        <div id="music">
+          
+          
+          
+          <!-- Music header -->
+          <header>
+            <h1 style="text-align: center; color: white;">MY PLAYLIST</h1>
+
+           
+            <div style="color: white; text-align: center;">NOW PLAYING</div>
+            <div><img src="wedonttalk.jpg" alt="album" id="musicImage" class="musicImage"></div>
+
+          <!-- All the tracks which are uploaded will be displayed here -->
+          <div class="music-tracks">
+          <div class="p_song" >
+            <p id="p_title" style="color: white;">WE DON'T TALK ANYMORE</p>
+            <p id="p_artist" style="color: white;">CHARLIE PUTT</p>
+            <button onclick="playlistmusic1()"><i class='bx bx-play' ></i></button>
+          </div>
+
+          <div class="p_song" >
+            <p id="p_title" style="color: white;">NIGHT CHANGES</p>
+            <p id="p_artist" style="color: white;">ONE DIRECTION</p>
+            <button onclick="playlistmusic2()"><i class='bx bx-play' ></i></button>
+          </div>
+          <div class="p_song" >
+            <p id="p_title" style="color: white;">DRAG ME DOWN</p>
+            <p id="p_artist"  style="color: white;">ONE DIRECTION</p>
+            <button  onclick="playlistmusic3()"><i class='bx bx-play' ></i></button>
+          </div></div>
+          <!-- Music player -->
+          <footer>
+            <!-- Audio tag is responsible for the audio playing. Check out audio tag's controls at W3 schools site and MDN docs -->
+            
+              <!-- Name of the track currently being played -->
+            <h4 style="color: white; text-align: center;" id="musictitle"></h4>
+
+            
+           
+          
+            <!-- Controls -->
+          
+            <!-- Progress bar container -->
+            <div class="control">
+              <!-- Current time of the track -->
+              <small></small>
+
+              
+
+              <!-- Duration of the track -->
+              <small></small>
+            </div>
+          </footer>
+        </div>
+
+    
+      
+      <!-- Footer -->
+      <footer class="navigation">
+      <a href="#"><i class="text-3xl fas fa-car"></i></a>
+
+        <!-- On clicking this button, map section is displayed -->
+        <a href="#"><i class="fas fa-directions" onclick="dir_nav()"></i></a>
+        
+
+        
+        <a href="#"><i class="fas fa-fan"></i></a>
+    
+
+        <!-- On clicking this button, music playlist section is displayed -->
+        <a href="#"><i class="fas fa-music"  onclick="music_nav()"></i></a>
+        <a><i class="fas fa-volume-up"></i></a>
+
+
+        
+
+        
+        </div>
+      
+      </footer>
+
+
+    <!-- Add script files before closing body tag -->
+    <script src="dash.js" defer></script>
+  </body>
+</html>
+
+
+
+
+
+
+
