@@ -34,7 +34,7 @@ function setupMap(center) {
 
 playlist=["song.mp3","song2.mp3","song3.mp3"]
 poster=["wedonttalk.jpg","nightchanges.jpg","dragmedown.jpg"]
-title=["We Don't Talk Anymore","Night CHanges","Drag Me Down"]
+title=["We Don't Talk Anymore","Night Changes","Drag Me Down"]
 playlist_index=0;
 
 song_name.innerHTML=title[playlist_index];
